@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import marked from 'marked';
 
 import Input from './Input';
+import Output from './Output';
 
 class Container extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class Container extends React.Component {
           <Input value={this.state.value} updateValue={this.updateValue.bind(this)} />
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <div dangerouslySetInnerHTML={this.parseInput(this.state.value)} ></div>
+          <Output value={this.parseInput(this.state.value)} />
         </div>
       </div>
     )
