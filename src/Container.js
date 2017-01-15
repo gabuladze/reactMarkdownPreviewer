@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import marked from 'marked';
 
-// import Input from './Input';
+import Input from './Input';
 
 class Container extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Container extends React.Component {
     return (
       <div>
         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <textarea rows="22" className="form-control" onChange={this.updateValue.bind(this)} value={this.state.value} />
+          <Input value={this.state.value} updateValue={this.updateValue.bind(this)} />
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div dangerouslySetInnerHTML={this.parseInput(this.state.value)} ></div>
